@@ -195,6 +195,12 @@ public class ServerWorker extends Thread {
 						server.broadcastNotify(user.getUsername(), "user_new_post", msg.message);
 					}
 				}
+				else if(msg.subject.equals("change_password")){
+					String[] passwords = gson.fromJson(msg.message, String[].class);
+					boolean result = server.changePassword(user.getUsername(), passwords[0], passwords[1]);
+
+					send(new Message("server", user.getUsername(), "MSG-RESULT", "password_update", gson.toJson(result)));
+				}
 				else if(msg.subject.equals("logout")){
 					server.removeUser(user);
 					user = new User();

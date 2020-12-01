@@ -247,6 +247,29 @@ public class Server {
 		return true;
 	}
 
+	public boolean changePassword(String username, String oldPass, String newPass){
+		System.out.println(oldPass +" " + newPass);
+		Document user = userCollection.find(new Document("username", username)).first();
+		if(user == null)
+			return false;
+
+		String hashedPass = user.get("password", String.class);
+		BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
+
+		if(bc.matches(oldPass, hashedPass)){
+			String newHashPass = hashPassword(newPass);
+			updateUserInformation(username, "password", newHashPass);
+			return true;
+		}
+		else{
+			System.out.println("password does not match");
+		}
+
+		return false;
+	}
+
+
+
 	private String hashPassword(String pw){
 		BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
 		return bc.encode(pw);
