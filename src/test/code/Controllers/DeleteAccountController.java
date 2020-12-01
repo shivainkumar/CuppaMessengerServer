@@ -13,6 +13,7 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteAccountController {
 
@@ -31,14 +32,19 @@ public class DeleteAccountController {
     }
     @FXML
     public void initialize(){
-
-        list.getItems().addAll(server.getAllUsers());
-
+        refresh();
     }
 
     public void delete() throws IOException {
-        System.out.println(list.getSelectionModel().getSelectedItem());
-        server.removeUser((User)list.getSelectionModel().getSelectedItem());
+        server.removeAccount(list.getSelectionModel().getSelectedItem().toString());
 
+    }
+
+    public void refresh(){
+        list.getItems().clear();
+        List<User> users = server.getAllUsers();
+        for (int i = 0; i< users.size(); i++){
+            list.getItems().add(users.get(i).getUsername());
+        }
     }
 }
