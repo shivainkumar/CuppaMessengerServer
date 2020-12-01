@@ -226,6 +226,14 @@ public class Server {
 		clientList.removeIf(worker -> worker.getWorkerId().equals(workerId));
 	}
 
+	public boolean removeAccount(String username){
+		if(userCollection.find(new Document("username", username)).first() == null)
+			return false;
+
+		userCollection.deleteOne(new Document("username", username));
+		return true;
+	}
+
 	public boolean addNewAccount(String fullName, String username, String password, String jobTitle, String bio, String avatar){
 
 		//return false if the username already exists
