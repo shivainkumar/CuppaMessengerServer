@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="559.0" prefWidth="782.0" style="-fx-background-color: #1B1D29;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.CreateAccountController">
+<VBox alignment="CENTER" prefHeight="559.0" prefWidth="782.0" style="-fx-background-color: #1B1D29;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.Controllers.CreateAccountController">
    <children>
                  <Label prefHeight="46.0" prefWidth="232.0" text="Create New Account" textFill="#08bdff">
                      <font>

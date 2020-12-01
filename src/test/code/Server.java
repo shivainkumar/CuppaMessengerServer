@@ -119,7 +119,7 @@ public class Server {
 		}
 	}
 
-	protected void removeUser(User user) throws IOException {
+	public void removeUser(User user) throws IOException {
 		userList.remove(user);
 		broadcastNotify(user.getUsername(), "user_status_change", "offline");
 	}
@@ -129,7 +129,7 @@ public class Server {
 		return userList;
 	}
 
-	protected List<User> getAllUsers(){
+	public List<User> getAllUsers(){
 		List<User> users = new ArrayList<>();
 		for (Document userDoc : userCollection.find()) {
 			String username = userDoc.get("username", String.class);

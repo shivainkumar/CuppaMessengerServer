@@ -1,5 +1,6 @@
-package code;
+package code.Controllers;
 
+import code.Server;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
