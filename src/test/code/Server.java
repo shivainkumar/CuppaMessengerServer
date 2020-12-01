@@ -126,7 +126,6 @@ public class Server {
 
 	protected String getOnlineUsers(){
 		String onlineUsers = gson.toJson(userList);
-
 		return onlineUsers;
 	}
 
