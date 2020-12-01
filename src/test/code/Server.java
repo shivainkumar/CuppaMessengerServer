@@ -124,13 +124,12 @@ public class Server {
 		broadcastNotify(user.getUsername(), "user_status_change", "offline");
 	}
 
-	protected String getOnlineUsers(){
-		String onlineUsers = gson.toJson(userList);
+	protected List<User> getOnlineUsers(){
 
-		return onlineUsers;
+		return userList;
 	}
 
-	protected String getAllUsers(){
+	protected List<User> getAllUsers(){
 		List<User> users = new ArrayList<>();
 		for (Document userDoc : userCollection.find()) {
 			String username = userDoc.get("username", String.class);
@@ -140,7 +139,7 @@ public class Server {
 			users.add(userToAdd);
 		}
 
-		return gson.toJson(users);
+		return users;
 	}
 
 	protected User getUser(String username){

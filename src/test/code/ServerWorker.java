@@ -114,7 +114,7 @@ public class ServerWorker extends Thread {
 
 						send(new Message("server", user.getUsername(), "MSG-RESULT", "login_credentials", gson.toJson(this_user)));
 						server.addUser(this_user);
-						send(new Message("server", user.getUsername(), "MSG-RESULT", "all_users", server.getAllUsers()));
+						send(new Message("server", user.getUsername(), "MSG-RESULT", "all_users", gson.toJson(server.getAllUsers())));
 						send(new Message("server", user.getUsername(), "MSG-RESULT", "all_posts", server.getAllPosts()));
 						server.releasePendingMessages(user.getUsername());
 						break;
@@ -162,13 +162,13 @@ public class ServerWorker extends Thread {
 				//send user list of online users
 				else if (msg.message.equalsIgnoreCase("online_users")) {
 
-					Message info = new Message("server", msg.from, "MSG-RESULT", "online_users", server.getOnlineUsers());
+					Message info = new Message("server", msg.from, "MSG-RESULT", "online_users", gson.toJson(server.getOnlineUsers()));
 					send(info);
 				}
 				//send user list of all registered users
 				else if (msg.message.equalsIgnoreCase("all_users")) {
 
-					Message info = new Message("server", msg.from, "MSG-RESULT", "all_users", server.getAllUsers());
+					Message info = new Message("server", msg.from, "MSG-RESULT", "all_users", gson.toJson(server.getAllUsers()));
 					send(info);
 				}
 				//change users status
