@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -24,6 +25,8 @@ public class ServerDriver extends Application {
         rootScene.getStylesheets().add(getClass().getResource("/styles/main.css").toExternalForm());
         primaryStage.setScene(rootScene);
         mainController.setStage(primaryStage);
+        primaryStage.getIcons().add(new Image("/cuppa.png"));
+
         primaryStage.show();
     }
 
