@@ -35,7 +35,7 @@ public class CreateAccountController {
         }
         else{
             accountCreateResult.setText("Error creating account - " + username.getText());
-        };
+        }
 
     }
     public void reset(){

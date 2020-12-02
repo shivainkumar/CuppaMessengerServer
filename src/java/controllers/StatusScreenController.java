@@ -34,7 +34,7 @@ public class StatusScreenController {
         }
     }
 
-    public void switchClicked(MouseEvent mouseEvent) throws IOException {
+    public void switchClicked() throws IOException {
         //stop server
         if (isServerRunning){
             isServerRunning = false;

@@ -24,7 +24,6 @@ public class User implements Serializable {
         this.username = username;
         this.jobTitle = jobTitle;
         this.bio = bio;
-        this.avatar = avatar;
         this.status = "online";
     }
     public User(String username, String fullName, String jobTitle, String bio, String avatar) {

@@ -42,16 +42,13 @@
     -fx-background-color:#00ffd9;
     -fx-text-fill:#1B1D29;
 }
-.deleteList .list-cell:even{
+.deleteList .list-cell{
     -fx-background-color:#1B1D29;
-}
-
-.deleteList .list-cell:odd{
-    -fx-background-color:#1B1D29;
+    -fx-text-fill:#83d6ca;
 }
 .deleteList .list-cell:filled:hover{
-    -fx-background-color:#00ffd9;
-    -fx-text-fill:#1B1D29;
+    -fx-background-color:#2D3142;
+    -fx-text-fill:#83d6ca;
 }
 
 

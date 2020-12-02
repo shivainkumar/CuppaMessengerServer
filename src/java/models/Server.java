@@ -74,32 +74,27 @@ public class Server {
 	}
 
 	public void listenForClients() throws IOException {
-		System.out.println("Listening for clients");
 		Server thisServer = this;
 		if(!socket.isClosed()){
-			Thread t = new Thread(new Runnable() {
+			Thread t = new Thread(() -> {
+				try {
+					while(listenForClients) {
+						Socket clientSocket = socket.accept();
 
-				@Override
-				public void run() {
-					try {
-						while(listenForClients) {
-							Socket clientSocket = socket.accept();
+						final ServerWorker SERVER_WORKER = new ServerWorker(UUID.randomUUID().toString(),thisServer, clientSocket);
+						SERVER_WORKER.start();
 
-							final ServerWorker SERVER_WORKER = new ServerWorker(UUID.randomUUID().toString(),thisServer, clientSocket);
-							SERVER_WORKER.start();
+						clientList.add(SERVER_WORKER);
 
-							clientList.add(SERVER_WORKER);
-
-						}
-
-						closeServer();
 					}
-					catch(SocketException ex) {
-						System.out.println("Stopped listening for clients.");
-					}
-					catch(IOException ex){
-						ex.printStackTrace();
-					}
+
+					closeServer();
+				}
+				catch(SocketException ex) {
+					System.out.println("Stopped listening for clients.");
+				}
+				catch(IOException ex){
+					ex.printStackTrace();
 				}
 			});
 
@@ -111,14 +106,14 @@ public class Server {
 			listenForClients();
 		}
 	}
-	protected void addUser(User user) throws IOException {
+	protected void addUser(User user){
 		if(!userList.contains(user)) {
 			userList.add(user);
 			broadcastNotify(user.getUsername(), "user_status_change", "online");
 		}
 	}
 
-	public void removeUser(User user) throws IOException {
+	public void removeUser(User user){
 		userList.remove(user);
 		broadcastNotify(user.getUsername(), "user_status_change", "offline");
 	}
@@ -159,7 +154,7 @@ public class Server {
 		return "offline";
 	}
 
-	protected void sendToClient(String username, Message msg) throws IOException {
+	protected void sendToClient(String username, Message msg){
 		String to = msg.to;
 
 		ServerWorker recipientWorker = getServerWorker(username);
@@ -172,7 +167,7 @@ public class Server {
 		}
 	}
 
-	protected void sendToGroup(Message msg) throws IOException{
+	protected void sendToGroup(Message msg){
 		String[] recipients = gson.fromJson(msg.to, String[].class);
 
 		for(String recipient: recipients){
@@ -190,7 +185,7 @@ public class Server {
 		userCollection.updateOne(Filters.eq("username", username), Updates.set(field, newValue));
 	}
 
-	protected void broadcastNotify(String from, String subject, String message) throws IOException{
+	protected void broadcastNotify(String from, String subject, String message){
 		for(User user : userList){
 			Message notify = new Message(from, user.getUsername(), "MSG-NOTIFY", subject, message);
 			Objects.requireNonNull(getServerWorker(user.getUsername())).send(notify);
@@ -209,7 +204,7 @@ public class Server {
 		}
 	}
 
-	protected void releasePendingMessages(String recipient) throws IOException {
+	protected void releasePendingMessages(String recipient){
 
 		if(pendingMessages.containsKey(recipient)) {
 
@@ -247,7 +242,6 @@ public class Server {
 	}
 
 	public boolean changePassword(String username, String oldPass, String newPass){
-		System.out.println(oldPass +" " + newPass);
 		Document user = userCollection.find(new Document("username", username)).first();
 		if(user == null)
 			return false;

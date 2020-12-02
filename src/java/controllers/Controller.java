@@ -40,7 +40,7 @@ public class Controller {
     }
 
     public void setStage(Stage stage){
-        this.stage = stage;
+        Controller.stage = stage;
     }
 
 
@@ -56,13 +56,8 @@ public class Controller {
             stage.setOpacity(0.8f);
         }));
 
-        paneControllers.setOnDragDone((event ->{
-            stage.setOpacity(1.0f);
-
-        }));
-        paneControllers.setOnMouseReleased((event -> {
-            stage.setOpacity(1.0f);
-        }));
+        paneControllers.setOnDragDone((event -> stage.setOpacity(1.0f)));
+        paneControllers.setOnMouseReleased((event -> stage.setOpacity(1.0f)));
     }
 
     public void setCurrentTabButton(String name){
@@ -71,14 +66,16 @@ public class Controller {
         createAccountBtn.setStyle("-fx-background-color:  #1B1D29");
         deleteAccountBtn.setStyle("-fx-background-color:  #1B1D29");
 
-        if(name.equals("status")){
-            serverStatusBtn.setStyle("-fx-background-color:  #2D3142");
-        }
-        else if(name.equals("createAccount")){
-            createAccountBtn.setStyle("-fx-background-color:  #2D3142");
-        }
-        else if(name.equals("deleteAccount")){
-            deleteAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        switch (name) {
+            case "status":
+                serverStatusBtn.setStyle("-fx-background-color:  #2D3142");
+                break;
+            case "createAccount":
+                createAccountBtn.setStyle("-fx-background-color:  #2D3142");
+                break;
+            case "deleteAccount":
+                deleteAccountBtn.setStyle("-fx-background-color:  #2D3142");
+                break;
         }
     }
 
@@ -118,7 +115,7 @@ public class Controller {
     }
 
     public void close(ActionEvent actionEvent) {
-        ((Stage)((Button)actionEvent.getSource()).getScene().getWindow()).hide();
+        (((Button)actionEvent.getSource()).getScene().getWindow()).hide();
         System.exit(0);
     }
 }

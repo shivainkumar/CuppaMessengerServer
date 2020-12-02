@@ -75,8 +75,16 @@
       </Label>
         <HBox prefHeight="48.0" prefWidth="511.0" spacing="10.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="66.0" styleClass="primaryBtn" text="Create" />
-                <Button alignment="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="60.0" styleClass="primaryBtn" text="Reset" />
+                <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="66.0" styleClass="primaryBtn" text="Create">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="60.0" styleClass="primaryBtn" text="Reset">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
             </children>
             <padding>
                 <Insets left="40.0" right="40.0" />
