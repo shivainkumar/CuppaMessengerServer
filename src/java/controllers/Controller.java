@@ -72,25 +72,34 @@ public class Controller {
         }));
     }
 
-    public void serverStatus() throws IOException{
+    public void setCurrentTabButton(String name){
+
         serverStatusBtn.setStyle("-fx-background-color:  #1B1D29");
-        createAccountBtn.setStyle("-fx-background-color:  #2D3142");
-        deleteAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        createAccountBtn.setStyle("-fx-background-color:  #1B1D29");
+        deleteAccountBtn.setStyle("-fx-background-color:  #1B1D29");
 
+        if(name.equals("status")){
+            serverStatusBtn.setStyle("-fx-background-color:  #2D3142");
+        }
+        else if(name.equals("createAccount")){
+            createAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        }
+        else if(name.equals("deleteAccount")){
+            deleteAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        }
+    }
+
+    public void serverStatus() throws IOException{
+        setCurrentTabButton("status");
         loadUI("serverStatus", "/views/statusScreen.fxml");
-
     }
     public void createAccount() throws IOException {
-        createAccountBtn.setStyle("-fx-background-color:  #1B1D29");
-        serverStatusBtn.setStyle("-fx-background-color:  #2D3142");
-        deleteAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        setCurrentTabButton("createAccount");
         loadUI("createAccount", "/views/createAccount.fxml");
     }
 
     public void deleteAccount() throws IOException {
-        deleteAccountBtn.setStyle("-fx-background-color:  #1B1D29");
-        serverStatusBtn.setStyle("-fx-background-color:  #2D3142");
-        createAccountBtn.setStyle("-fx-background-color:  #2D3142");
+        setCurrentTabButton("deleteAccount");
         loadUI("deleteAccount", "/views/deleteAccount.fxml");
     }
 

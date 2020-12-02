@@ -1,0 +1,54 @@
+.primaryBg{
+    -fx-background-color: #1B1D29;
+}
+.secondaryBg{
+    -fx-background-color: #2D3142;
+}
+
+.inputField{
+    -fx-background-color: #00ffd9, #1B1D29, #1B1D29;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-text-fill:#00ffd9;
+    -fx-text-inner-color:#252525;
+    -fx-font-size:18;
+}
+
+.inputField:focused{
+    -fx-background-color: #00ffd9, #373a4f, #373a4f;
+}
+
+.primaryText{
+    -fx-text-fill:#00ffd9;
+}
+
+.primaryBtn{
+    -fx-background-color:#00ffd9;
+    -fx-text-fill:#1B1D29;
+    -fx-padding: 6 8 6 8;
+}
+
+.deleteList{
+    fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.deleteList .list-cell{
+    -fx-text-fill:#00ffd9;
+    -fx-padding: 6 8 6 8;
+    -fx-background-insets: 0;
+}
+
+.deleteList .list-cell:filled:selected:focused, .list-cell:filled:selected{
+    -fx-background-color:#00ffd9;
+    -fx-text-fill:#1B1D29;
+}
+.deleteList .list-cell:even{
+    -fx-background-color:#1B1D29;
+}
+
+.deleteList .list-cell:odd{
+    -fx-background-color:#1B1D29;
+}
+
+
+

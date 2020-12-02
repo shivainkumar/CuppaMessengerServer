@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="559.0" prefWidth="782.0" style="-fx-background-color: #1B1D29;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StatusScreenController">
+<VBox alignment="CENTER" prefHeight="559.0" prefWidth="782.0" styleClass="primaryBg" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StatusScreenController">
    <children>
       <Label fx:id="startStopLabel" alignment="CENTER" onMouseClicked="#switchClicked" prefHeight="185.0" prefWidth="185.0" style="-fx-border-color: #08bdff; -fx-border-radius: 90;" text="default" textFill="#08bdff">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="message" text="Label" textFill="#08bdff">
+      <Label fx:id="message" text="Label" styleClass="primaryText">
          <VBox.margin>
             <Insets top="75.0" />
          </VBox.margin>

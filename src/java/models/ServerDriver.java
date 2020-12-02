@@ -20,7 +20,9 @@ public class ServerDriver extends Application {
 
         primaryStage.setTitle("Cuppa Messenger Server");
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setScene(new Scene(root));
+        Scene rootScene = new Scene(root);
+        rootScene.getStylesheets().add(getClass().getResource("/styles/main.css").toExternalForm());
+        primaryStage.setScene(rootScene);
         mainController.setStage(primaryStage);
         primaryStage.show();
     }

@@ -24,13 +24,13 @@ public class StatusScreenController {
     public void initialize(){
         if (isServerRunning){
             startStopLabel.setText("Stop");
-            startStopLabel.setStyle("-fx-border-color: RED; -fx-border-radius: 90");
-            message.setText("Click the \"Stop\" button to stop the server.\nCAUTION: Doing this will stop ");
+            startStopLabel.setStyle("-fx-text-fill:#ff001e;-fx-border-color: #ff001e; -fx-border-radius: 90; -fx-border-width:5;");
+            message.setText("Server running. Stopping the server will close the application.");
         }
         else {
             startStopLabel.setText("Start");
-            message.setText("Click the \"Start\" button to start the server.");
-            startStopLabel.setStyle("-fx-border-color: GREEN;-fx-border-radius: 90");
+            startStopLabel.setStyle("-fx-text-fill:#14f532;-fx-border-color:#14f532;-fx-border-radius: 90; -fx-border-width:5;");
+            message.setText("Click to start server.");
         }
     }
 

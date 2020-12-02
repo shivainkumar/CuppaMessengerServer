@@ -11,7 +11,7 @@
 
 <BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
    <left>
-      <VBox alignment="CENTER" prefHeight="478.0" prefWidth="218.0" spacing="90.0" style="-fx-background-color: #2D3142;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="478.0" prefWidth="218.0" spacing="90.0" styleClass="primaryBg" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -20,23 +20,23 @@
             </ImageView>
             <VBox>
                <children>
-                  <Button fx:id="serverStatusBtn" mnemonicParsing="false" onAction="#serverStatus" prefHeight="62.0" prefWidth="218.0" style="-fx-background-color: #2D3142;" text="Server Status" textFill="#08bdff" />
-                  <Button fx:id="createAccountBtn" mnemonicParsing="false" onAction="#createAccount" prefHeight="62.0" prefWidth="218.0" style="-fx-background-color: #2D3142;" text="Create Account" textFill="#08bdff" />
-                  <Button fx:id="deleteAccountBtn" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="62.0" prefWidth="218.0" style="-fx-background-color: #2D3142;" text="Delete Account" textFill="#08bdff" />
+                  <Button fx:id="serverStatusBtn" mnemonicParsing="false" onAction="#serverStatus" prefHeight="62.0" prefWidth="218.0" styleClass="primaryBg" text="Server Status" textFill="#00ffd9" />
+                  <Button fx:id="createAccountBtn" mnemonicParsing="false" onAction="#createAccount" prefHeight="62.0" prefWidth="218.0" styleClass="primaryBg" text="Create Account" textFill="#00ffd9" />
+                  <Button fx:id="deleteAccountBtn" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="62.0" prefWidth="218.0" styleClass="primaryBg" text="Delete Account" textFill="#00ffd9" />
                </children>
             </VBox>
          </children>
       </VBox>
    </left>
    <top>
-      <HBox fx:id="paneControllers" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="1000.0" spacing="5.0" style="-fx-background-color: #2D3142;" BorderPane.alignment="CENTER">
+      <HBox fx:id="paneControllers" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="1000.0" spacing="5.0" styleClass="primaryBg" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="minimizeBtn" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #1B1D29;" text="__" textFill="#08bdff">
+            <Button fx:id="minimizeBtn" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="40.0" styleClass="primaryBg" text="__" textFill="#08bdff">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #1B1D29;" text="X" textFill="#08bdff">
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="40.0" styleClass="primaryBg" text="X" textFill="#08bdff">
                <font>
                   <Font size="15.0" />
                </font>
