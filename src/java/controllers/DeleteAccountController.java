@@ -11,7 +11,6 @@ import java.util.List;
 
 public class DeleteAccountController {
 
-
     @FXML
     private ListView<String> list;
     private final Server server = Server.getInstance();

@@ -26,17 +26,25 @@ public class CreateAccountController {
 
 
     public void createAccount() {
-        if(server.addNewAccount(name.getText(), username.getText(), password.getText(), jobTitle.getText(), "Hey there! I am using Cuppa.", "1")){
-            accountCreateResult.setText("Account successfully created - " + username.getText());
-            name.setText("");
-            username.setText("");
-            password.setText("");
-            jobTitle.setText("");
+        String enteredName = name.getText();
+        String enteredUsername = username.getText();
+        String enteredPassword = password.getText();
+        String enteredJob = password.getText();
+        if(enteredName.equals("") || enteredUsername.equals("") || enteredPassword.equals("") || enteredJob.equals("")){
+            accountCreateResult.setText("Fields cannot be empty");
         }
-        else{
-            accountCreateResult.setText("Error creating account - " + username.getText());
+        else {
+            if (server.addNewAccount(enteredName, enteredUsername, enteredPassword, enteredJob, "Hey there! I am using Cuppa.", "1")) {
+                accountCreateResult.setText("Account successfully created - " + username.getText());
+                name.setText("");
+                username.setText("");
+                password.setText("");
+                jobTitle.setText("");
+            }
+            else {
+                accountCreateResult.setText("Duplicate username - " + username.getText());
+            }
         }
-
     }
     public void reset(){
         name.setText("");
