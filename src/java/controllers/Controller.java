@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -22,9 +21,7 @@ public class Controller {
     @FXML private HBox paneControllers;
 
     private static HashMap<String, Parent> uiMap;
-    private static HashMap<String, Scene> uiScene;
-    private static HashMap<String, Stage> uiStage;
-    private static HashMap<String, Object> controllerMap;
+
 
     private static Stage stage;
 
@@ -35,10 +32,6 @@ public class Controller {
     public void initialize() throws IOException {
         if(uiMap == null){
             uiMap = new HashMap<>();
-            uiScene = new HashMap<>();
-            uiStage = new HashMap<>();
-            controllerMap = new HashMap<>();
-
         }
         makeStageDraggable();
         createAccount();
@@ -115,7 +108,6 @@ public class Controller {
             Parent root1 = loader.load();
 
             uiMap.put(key,root1);
-            controllerMap.put(key, loader.getController());
             mainPane.setCenter(root1);
         }
 

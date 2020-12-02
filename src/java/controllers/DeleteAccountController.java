@@ -16,8 +16,6 @@ public class DeleteAccountController {
     ListView list;
     @FXML
     Button deleteBtn;
-    @FXML
-    Button clearBtn;
 
     Server server = Server.getInstance();
 
@@ -29,7 +27,7 @@ public class DeleteAccountController {
         refresh();
     }
 
-    public void delete() throws IOException {
+    public void delete() {
         server.removeAccount(list.getSelectionModel().getSelectedItem().toString());
 
     }

@@ -2,7 +2,6 @@ package controllers;
 
 import javafx.scene.control.Label;
 import models.Server;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -26,7 +25,7 @@ public class CreateAccountController {
     }
 
 
-    public void createAccount(ActionEvent actionEvent) {
+    public void createAccount() {
         if(server.addNewAccount(name.getText(), username.getText(), password.getText(), jobTitle.getText(), "Hey there! I am using Cuppa.", "1")){
             accountCreateResult.setText("Account successfully created - " + username.getText());
             name.setText("");
@@ -39,7 +38,7 @@ public class CreateAccountController {
         };
 
     }
-    public void reset(ActionEvent actionEvent){
+    public void reset(){
         name.setText("");
         username.setText("");
         password.setText("");
