@@ -49,6 +49,9 @@
 .deleteList .list-cell:odd{
     -fx-background-color:#1B1D29;
 }
-
+.deleteList .list-cell:filled:hover{
+    -fx-background-color:#00ffd9;
+    -fx-text-fill:#1B1D29;
+}
 
 
