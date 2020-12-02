@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.scene.control.Label;
 import models.Server;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,8 @@ public class CreateAccountController {
     TextField password;
     @FXML
     TextField jobTitle;
+    @FXML
+    Label accountCreateResult;
 
     Server server = Server.getInstance();
 
@@ -24,11 +27,17 @@ public class CreateAccountController {
 
 
     public void createAccount(ActionEvent actionEvent) {
-        System.out.println(server.addNewAccount(name.getText(), username.getText(), password.getText(), jobTitle.getText(), "Hey there! I am using Cuppa.", "1"));
-        name.setText("");
-        username.setText("");
-        password.setText("");
-        jobTitle.setText("");
+        if(server.addNewAccount(name.getText(), username.getText(), password.getText(), jobTitle.getText(), "Hey there! I am using Cuppa.", "1")){
+            accountCreateResult.setText("Account successfully created - " + username.getText());
+            name.setText("");
+            username.setText("");
+            password.setText("");
+            jobTitle.setText("");
+        }
+        else{
+            accountCreateResult.setText("Error creating account - " + username.getText());
+        };
+
     }
     public void reset(ActionEvent actionEvent){
         name.setText("");

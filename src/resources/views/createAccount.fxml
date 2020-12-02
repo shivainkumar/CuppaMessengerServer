@@ -8,74 +8,82 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fillWidth="false" prefHeight="559.0" prefWidth="782.0" spacing="40.0" styleClass="primaryBg" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreateAccountController">
-   <children>
-                 <Label prefHeight="46.0" prefWidth="232.0" styleClass="primaryText" text="Create New Account">
-                     <font>
-                         <Font size="24.0" />
-                     </font>
-                 </Label>
-      <VBox prefHeight="361.0" prefWidth="511.0" spacing="10.0">
-         <children>
-            <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="431.0" spacing="10.0">
-               <children>
-                               <Label styleClass="primaryText" text="Name">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                               <TextField fx:id="name" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
-               </children>
-            </VBox>
-            <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="100.0" spacing="10.0">
-               <children>
-                               <Label styleClass="primaryText" text="Username">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                               <TextField fx:id="username" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
-               </children>
-            </VBox>
-            <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="100.0" spacing="10.0">
-               <children>
-                               <Label styleClass="primaryText" text="Password">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                               <TextField fx:id="password" accessibleRole="PASSWORD_FIELD" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
-               </children>
-            </VBox>
-            <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="431.0" spacing="10.0">
-               <children>
-                               <Label styleClass="primaryText" text="Job Title">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                               <TextField fx:id="jobTitle" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
-               </children>
-            </VBox>
-         </children>
+<VBox fillWidth="false" prefHeight="559.0" prefWidth="782.0" spacing="30.0" styleClass="primaryBg" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreateAccountController">
+    <children>
+        <Label prefHeight="46.0" prefWidth="232.0" styleClass="primaryText" text="Create New Account">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <VBox prefHeight="361.0" prefWidth="511.0" spacing="10.0">
+            <children>
+                <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="431.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="primaryText" text="Name">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="name" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
+                    </children>
+                </VBox>
+                <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="primaryText" text="Username">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="username" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
+                    </children>
+                </VBox>
+                <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="primaryText" text="Password">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="password" accessibleRole="PASSWORD_FIELD" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
+                    </children>
+                </VBox>
+                <VBox minHeight="-Infinity" prefHeight="73.0" prefWidth="431.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="primaryText" text="Job Title">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="jobTitle" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" styleClass="inputField" />
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+            </padding>
+        </VBox>
+      <Label styleClass="primaryText" fx:id="accountCreateResult">
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets left="40.0" />
          </VBox.margin>
-         <padding>
-            <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
-         </padding>
-      </VBox>
-                 <HBox prefHeight="48.0" prefWidth="511.0" spacing="10.0">
-                     <children>
-                         <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="66.0" styleClass="primaryBtn" text="Create" />
-                         <Button alignment="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="60.0" styleClass="primaryBtn" text="Reset" />
-                     </children>
-         <padding>
-            <Insets left="40.0" right="40.0" />
-         </padding>
-                 </HBox>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
-   </padding>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+        <HBox prefHeight="48.0" prefWidth="511.0" spacing="10.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="66.0" styleClass="primaryBtn" text="Create" />
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="60.0" styleClass="primaryBtn" text="Reset" />
+            </children>
+            <padding>
+                <Insets left="40.0" right="40.0" />
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+    </padding>
 </VBox>

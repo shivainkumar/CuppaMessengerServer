@@ -33,13 +33,6 @@
                   <Font size="15.0" />
                </font></Button>
             <Button fx:id="refreshBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refresh" prefHeight="34.0" prefWidth="110.0" styleClass="primaryBtn" text="Refresh">
-               <graphic>
-                  <ImageView fitHeight="28.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@refresh.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
                <font>
                   <Font size="15.0" />
                </font>
