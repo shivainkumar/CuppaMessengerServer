@@ -38,7 +38,6 @@ public class ServerWorker extends Thread {
 			countdownHeartbeatTimer();
 			authenticateUser();
 			heartbeat.cancel();
-			System.out.println("Stopping client thread.");
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();
@@ -84,7 +83,7 @@ public class ServerWorker extends Thread {
 			dout.flush();
 		}
 		catch(Exception ex){
-			System.out.println(ex.getMessage());
+			ex.printStackTrace();
 		}
 
 	}
@@ -111,6 +110,7 @@ public class ServerWorker extends Thread {
 					if (this_user != null) {
 						isAuth = true;
 						user = this_user;
+
 
 						send(new Message("server", user.getUsername(), "MSG-RESULT", "login_credentials", gson.toJson(this_user)));
 						server.addUser(this_user);
@@ -199,7 +199,13 @@ public class ServerWorker extends Thread {
 					String[] passwords = gson.fromJson(msg.message, String[].class);
 					boolean result = server.changePassword(user.getUsername(), passwords[0], passwords[1]);
 
-					send(new Message("server", user.getUsername(), "MSG-RESULT", "password_update", gson.toJson(result)));
+					if(result){
+						send(new Message("server", user.getUsername(), "MSG-RESULT", "password_update", "success"));
+					}
+					else{
+						send(new Message("server", user.getUsername(), "MSG-RESULT", "password_update", "fail"));
+					}
+
 				}
 				else if(msg.subject.equals("logout")){
 					server.removeUser(user);

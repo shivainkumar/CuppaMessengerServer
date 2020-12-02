@@ -261,9 +261,6 @@ public class Server {
 			updateUserInformation(username, "password", newHashPass);
 			return true;
 		}
-		else{
-			System.out.println("password does not match");
-		}
 
 		return false;
 	}
@@ -309,7 +306,6 @@ public class Server {
 	}
 
 	public void closeServer() throws IOException {
-		System.out.println("Server stopped");
 		socket.close();
 	}
 
