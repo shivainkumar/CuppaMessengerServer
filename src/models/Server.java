@@ -186,6 +186,7 @@ public class Server {
 	}
 
 	protected void broadcastNotify(String from, String subject, String message){
+
 		for(User user : userList){
 			Message notify = new Message(from, user.getUsername(), "MSG-NOTIFY", subject, message);
 			Objects.requireNonNull(getServerWorker(user.getUsername())).send(notify);
