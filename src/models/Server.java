@@ -230,7 +230,8 @@ public class Server {
 	}
 
 	public boolean addNewAccount(String fullName, String username, String password, String jobTitle, String bio, String avatar){
-
+		User newUser = new User(username, fullName, jobTitle, bio, avatar);
+		newUser.setStatus("offline");
 		//return false if the username already exists
 		if(userCollection.find(new Document("username", username)).first() != null)
 			return false;
@@ -238,7 +239,7 @@ public class Server {
 		Document new_user = new Document("_id", new ObjectId());
 		new_user.append("username", username).append("fullName", fullName).append("password", hashPassword(password)).append("jobTitle", jobTitle).append("bio", bio).append("avatar", avatar);
 		userCollection.insertOne(new_user);
-
+		broadcastNotify("server", "new_account", gson.toJson(newUser));
 		return true;
 	}
 
