@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ChatAppPractice.iml" filepath="$PROJECT_DIR$/ChatAppPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CuppaMessenger.iml" filepath="$PROJECT_DIR$/CuppaMessenger.iml" />
     </modules>
   </component>
 </project>

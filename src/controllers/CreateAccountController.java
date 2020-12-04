@@ -29,7 +29,7 @@ public class CreateAccountController {
         String enteredName = name.getText();
         String enteredUsername = username.getText();
         String enteredPassword = password.getText();
-        String enteredJob = password.getText();
+        String enteredJob = jobTitle.getText();
         if(enteredName.equals("") || enteredUsername.equals("") || enteredPassword.equals("") || enteredJob.equals("")){
             accountCreateResult.setText("Fields cannot be empty");
         }

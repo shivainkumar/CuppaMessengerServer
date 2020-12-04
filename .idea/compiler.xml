@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ChatAppPractice" />
+        <module name="CuppaMessenger" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ChatAppPractice" target="11" />
+      <module name="CuppaMessenger" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
